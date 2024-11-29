@@ -6,15 +6,15 @@ jobs:
   echo-hello:
     runs-on: ubuntu-latest
     steps:
-      - name: say hello
+      - name: "say hello"
      	run: echo "hello world"
   echo-goodby:
     runs-on: ubuntu-latest
     steps:
-      - name: fail step
+      - name: "fail step"
         run: |
 	  echo "failed"
 	  exit 1
-      - name: say goodbye
+      - name: "say goodbye"
         if: always()
         run: echo "goodbye"
