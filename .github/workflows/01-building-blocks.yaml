@@ -17,4 +17,5 @@ jobs:
 	  echo "failed"
 	  exit 1
       - name: say goodbye
+        if: always()
         run: echo "goodbye"
