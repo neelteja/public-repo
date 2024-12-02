@@ -6,11 +6,15 @@ jobs:
   ubuntu-echo:
     runs-on: Ubuntu-latest
     steps:
-      - name: display the os running on
-        run: echo "This job is running on an ${{ runner.os }}"
+      - name: linux display
+        run: |
+          echo "This job is running on an ${{ runner.os }}"
+          this is linux runner
 
   windows-echo:
     runs-on: windows-latest
     steps:
       - name: win display
-        run: echo "This job is running on ${{ runner.os }}"
+        run: |
+          echo "This job is running on ${{ runner.os }}"
+          this is windows runner
