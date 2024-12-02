@@ -1,10 +1,10 @@
 name: "02 - workflow events"
   
 on:
-  push:
-  pull_request:
-  schedule: #to schedule the runs
-    - cron: "*/5 * * * *"
+  #push:
+  #pull_request:
+  #schedule: #to schedule the runs
+  #  - cron: "*/5 * * * *"
   workflow_dispatch:  #to run manually
 
 jobs:
