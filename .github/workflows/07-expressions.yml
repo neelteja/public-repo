@@ -1,0 +1,24 @@
+name: 07 - Using Expressions
+
+on:
+    push:
+    workflow_dispatch:
+        inputs:
+            debug:
+                type: boolean
+                default: false
+
+jobs:
+    echo:
+        runs-on: Ubuntu-Latest
+        steps:
+            - name: "print start-up data"
+              if: ${{ github.event_name }} == "push"
+              run: |
+                echo "Triggered by ${{ github.event_name }}"
+                echo "Runner OS is ${{ runner.os }}" 
+            
+            - name: "Print when triggered"
+              if: ${{ github.event_name }} == "triggered"
+              run: |
+                echo "Triggered by ${{ github.event_name }}"
