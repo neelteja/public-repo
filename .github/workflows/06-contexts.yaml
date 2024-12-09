@@ -4,8 +4,7 @@ on:
     - push
     - workflow_dispatch
 
-run-name:
-    - ${{ runner.os }}
+run-name: my custom run name - ${{ runner.os }}
 
 jobs:
     echo-data:
