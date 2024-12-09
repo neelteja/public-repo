@@ -10,6 +10,9 @@ on:
 
 run-name: my custom run name - ${{ inputs.debug }}
 
+env:
+    MY_SOME_VAR: "some variable"
+
 jobs:
     echo-data:
         runs-on: Ubuntu-Latest
@@ -25,4 +28,7 @@ jobs:
             - name: Retrieve Variable
               run: echo "${{ vars.MY_VAR }}"
 
-    
+            - name: My env vars
+              env:
+                MY_SOME_VAR: "step variable"
+              run: echo "my vars ${{ env.MY_SOME_VAR }}"
