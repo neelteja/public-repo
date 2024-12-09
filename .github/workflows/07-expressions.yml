@@ -19,6 +19,6 @@ jobs:
                 echo "Runner OS is ${{ runner.os }}" 
             
             - name: "Print when triggered"
-              if: ${{ github.event_name }} == "triggered"
+              if: ${{ github.event_name }} == "workflow_dispatch"
               run: |
                 echo "Triggered by ${{ github.event_name }}"
