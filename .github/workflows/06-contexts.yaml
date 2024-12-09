@@ -4,6 +4,9 @@ on:
     - push
     - workflow_dispatch
 
+run-name:
+    - ${{ runner.os }}
+
 jobs:
     echo-data:
         runs-on: Ubuntu-Latest
@@ -18,3 +21,5 @@ jobs:
                 
             - name: Retrieve Variable
               run: echo "${{ vars.MY_VAR }}"
+
+    
