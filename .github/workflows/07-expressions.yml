@@ -1,4 +1,8 @@
 name: 07 - Using Expressions
+run-name: 07 - expressions | value - ${{ inputs.value && 'ON' || 'OFF' }}
+
+env:
+    MY_DEFAULT_VAR: ${{ vars.MYVAR || 'NO HELLO' }}
 
 on:
     push:
@@ -30,3 +34,6 @@ jobs:
               if: ${{ github.event_name }} == "workflow_dispatch"
               run: |
                 echo "Triggered by ${{ github.event_name }}"
+
+            - name: "Print variable"
+              run: echo ${{ env.MY_DEFAULT_VAR }}

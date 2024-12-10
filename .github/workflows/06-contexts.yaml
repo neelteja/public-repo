@@ -1,14 +1,13 @@
 name: 06 - Contexts
 
 on:
-    push:
     workflow_dispatch:
         inputs:
             debug:
                 type: boolean
                 default: false
 
-run-name: my custom run name - ${{ inputs.debug }}
+run-name: my custom run name - ${{ inputs.debug && 'ON' || 'OFF' }}
 
 env:
     MY_SOME_VAR: "some variable"
