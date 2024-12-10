@@ -1,0 +1,13 @@
+name: 09 - org variables
+
+on:
+    - push
+    - workflow_dispatch
+
+jobs:
+    print-variables:
+        runs-on: Ubuntu-Latest
+        environment: my_test
+        steps:
+            - name: print env variable
+              run: echo "${{ env.TEST_ENV_VAR }}"
