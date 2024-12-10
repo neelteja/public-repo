@@ -10,4 +10,4 @@ jobs:
         environment: my_test
         steps:
             - name: print env variable
-              run: echo "${{ env.TEST_ENV_VAR }}"
+              run: echo "${{ vars.TEST_ENV_VAR }}"
