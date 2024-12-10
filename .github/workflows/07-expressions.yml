@@ -2,7 +2,7 @@ name: 07 - Using Expressions
 run-name: 07 - expressions | value - ${{ inputs.value && 'ON' || 'OFF' }}
 
 env:
-    MY_DEFAULT_VAR: ${{ vars.MYVAR || 'NO HELLO' }}
+    MY_DEFAULT_VAR: ${{ vars.MY_VAR || 'NO HELLO' }}
 
 on:
     push:
