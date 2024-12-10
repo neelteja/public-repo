@@ -4,7 +4,7 @@ on:
     push:
     workflow_dispatch:
         inputs:
-            debug:
+            value:
                 type: boolean
                 default: false
 
@@ -12,6 +12,14 @@ jobs:
     echo:
         runs-on: Ubuntu-Latest
         steps:
+            - name: "Print when input value true"
+              if: ${{ inputs.value }}
+              run: echo "Input value is true"
+
+            - name: "print when input true and from main branch"
+              if: ${{ inputs.value && github.ref == 'refs/head/main' }}
+              run: echo "From Main branch"
+
             - name: "print start-up data"
               if: ${{ github.event_name }} == "push"
               run: |
