@@ -29,7 +29,7 @@ jobs:
               run: |
                 echo "Triggered by ${{ github.event_name }}"
                 echo "Runner OS is ${{ runner.os }}"
-                ${{ github.ref }}
+                echo "${{ github.ref }}"
             
             - name: "Print when triggered"
               if: ${{ github.event_name }} == "workflow_dispatch"
