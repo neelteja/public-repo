@@ -25,6 +25,3 @@ jobs:
             - name: I will execute
               if: ${{ failure() }}
               run: echo "i will execute if any previous step fails"
-
-            
-  
