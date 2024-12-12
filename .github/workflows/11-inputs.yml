@@ -1,0 +1,27 @@
+name: 11 - inputs
+
+on:
+    workflow_dispatch:
+        inputs:
+            env-var:
+                description: this is env variable
+                required: true
+                type: environment
+            some-choice:
+                description: select yes or no
+                required: true
+                type: choice
+                options:
+                    - yes
+                    - no
+                
+jobs:
+    echo:
+        runs-on: Ubuntu-latest
+        steps:
+            - name: print env
+              run: echo "env is ${{ inputs.env-var }}"
+
+            - name: print choice
+              run: echo "choice is ${{ inputs.some-choice }}"
+              
