@@ -10,15 +10,15 @@ on:
                     - success
                     - failed
 
-env:
-    GITHUB_OUTPUT: "SOME PATH"
+#env:
+#    GITHUB_OUTPUT: "SOME PATH"
 
 jobs:
     build:
         runs-on: Ubuntu-latest
         steps:
             - name: print guhub_output path
-              run: echo "output is ${{ env.GITHUB_OUTPUT }}"
+              run: echo "$GITHUB_OUTPUT"
 
             - name: build
               id: build
