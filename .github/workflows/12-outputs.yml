@@ -32,5 +32,7 @@ jobs:
         needs: build
         steps:
             - name: deploy only build is success
-              run: echo "Deploying........"
+              run: |
+                echo "Deploying........"
+                echo "asdf ${{ needs.build.outputs.build-status }}"
               if: ${{ needs.build.outputs.build-status }}
