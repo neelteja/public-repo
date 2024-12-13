@@ -15,7 +15,7 @@ env:
 
 jobs:
     build:
-        runs-on: ubunut-latest
+        runs-on: Ubuntu-latest
         steps:
             - name: print guhub_output path
               run: echo "output is ${{ env.GITHUB_OUTPUT }}"
@@ -28,7 +28,7 @@ jobs:
             build-status: ${{ steps.build.outputs.status }}
 
     deploy:
-        runs-on: ubuntu-latest
+        runs-on: Ubuntu-latest
         needs: build
         steps:
             - name: deploy only build is success
