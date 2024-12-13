@@ -35,4 +35,4 @@ jobs:
               run: |
                 echo "Deploying........"
                 echo "asdf ${{ needs.build.outputs.build-status }}"
-              if: ${{ needs.build.outputs.build-status }}  == "success"
+              if: ${{ needs.build.outputs.build-status == 'success' }}
