@@ -32,7 +32,7 @@ jobs:
         run: echo "running tests on ${{ matrix.os }} and version ${{ matrix.node }}"
 
       - name: fail if tag is test
-        if: ${{ matrix.tag }} == 'testing'
+        if: matrix.tag == 'testing'
         run: exit 1
 
       - name: perform testing
