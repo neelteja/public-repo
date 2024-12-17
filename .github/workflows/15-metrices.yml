@@ -1,0 +1,25 @@
+name: 15 - working with metrix
+
+on:
+  workflow_dispatch:
+
+jobs:
+  backwards-compatibility:
+    runs-on: ${{ matrix.os }}
+    name: ${{ matrix.os }}-${{ matrix.node }}
+    strategy:
+      matrix:
+        os:
+          - ununtu-latest
+          - windows-latest
+        node:
+          - 18.x
+          - 20.x
+          - 21.x
+    steps:
+      - name: setup node
+        uses: actions/setup-node@v3
+        with: ${{ matrix.node }}
+
+      - name: perform tests
+        run: echo "running tests on ${{ matrix.os }} and version ${{ matrix.node }}"
