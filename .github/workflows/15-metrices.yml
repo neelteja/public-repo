@@ -37,3 +37,16 @@ jobs:
 
       - name: perform testing
         run: echo "testing on ${{ matrix.os }} and version ${{ matrix.node }}"
+
+  include-example:
+    name: ${{ matrix.colour }}-${{ matrix.shape }}-${{ matrix.size }}
+    runs-on: Ubuntu-latest
+    strategy:
+      matrix:
+        colour: [white, black]
+        shape: [round, square]
+        size: [small, big]
+        include:
+          - colour: red
+            shape: triangle
+            
