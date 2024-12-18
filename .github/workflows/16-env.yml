@@ -7,7 +7,7 @@ on:
         type: environment
         default: staging
 
-run-name: env - ${{ inputs.target-env }}
+run-name: 16 | env - ${{ inputs.target-env }}
        
 jobs:
   echo:
