@@ -39,7 +39,7 @@ jobs:
         run: echo "testing on ${{ matrix.os }} and version ${{ matrix.node }}"
 
   include-example:
-    name: ${{ matrix.colour }}-${{ matrix.shape }}-${{ matrix.size }}
+    name: ${{ matrix.colour }}-${{ matrix.shape }}-${{ matrix.size }}-${{ matrix.number }}
     runs-on: Ubuntu-latest
     strategy:
       matrix:
@@ -47,10 +47,10 @@ jobs:
         shape: [round, square]
         size: [small, big]
         include:
+          - number: 10
           - colour: red
             shape: triangle
 
     steps:
       - name: echo
-        run: echo "${{ matrix.colour }}-${{ matrix.shape }}-${{ matrix.size }}"
-        
+        run: echo "${{ matrix.colour }}-${{ matrix.shape }}-${{ matrix.size }}-${{ matrix.number }}"
